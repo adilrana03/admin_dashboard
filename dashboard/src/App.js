@@ -4,6 +4,9 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 function App() {
+	const activeMenu = true;
+
+
 	return (
 		<div>
 			<BrowserRouter>
@@ -12,11 +15,22 @@ function App() {
 						<TooltipComponent content="Settings" position='top'>
 							<button type="button"
 								className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-								style={{ background: 'blue', borderRadius: '50%' }}>
+								style={{ background: 'black', borderRadius: '50%' }}>
 								<FiSettings />
 							</button>
 						</TooltipComponent>
 					</div>
+					{
+						activeMenu ? (
+							<div>
+								Sidebar
+							</div>
+						) : (
+							<div>
+								Sidebar w-0
+							</div>
+						)
+					}
 
 				</div>
 
